@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varenne — Maison</title>
+  <meta name="description" content="Varenne is a fictional house of clothing and leather goods. An original design study in the spirit of the great maisons.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect fill='%23121212' width='64' height='64'/%3E%3Ctext x='32' y='44' text-anchor='middle' fill='%23f6f3ee' font-family='Georgia' font-size='36'%3EV%3C/text%3E%3C/svg%3E">
+  <style>
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/f1.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/f2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/f3.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/f4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/f5.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/f5.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/f5.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+  </style>
+  <style>
+    :root {
+      --ivory: #f6f3ee;
+      --ivory-deep: #efe6d6;
+      --ink: #121212;
+      --ink-soft: #2c2824;
+      --stone: #6f675e;
+      --line: rgba(18, 18, 18, 0.14);
+      --oxblood: #6e2430;
+      --gold: #9a845c;
+      --gutter: 36px;
+      --header: 78px;
+      --serif: "Bodoni Moda", Didot, "Bodoni MT", "Times New Roman", serif;
+      --heritage: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+      --sans: "Outfit", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.6;
+      color-scheme: light;
+    }
+    body.locked { overflow: hidden; }
+    img { max-width: 100%; display: block; }
+    button, input { font: inherit; color: inherit; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; margin: 0; padding: 0; }
+    h1, h2, h3, p { margin: 0; }
+    ::selection { background: var(--oxblood); color: var(--ivory); }
+    :focus-visible { outline: 1px solid var(--oxblood); outline-offset: 3px; }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+
+    .kicker {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--stone);
+      font-weight: 400;
+    }
+    .link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 4px;
+      width: fit-content;
+    }
+    .link:hover { color: var(--oxblood); border-color: var(--oxblood); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 48px;
+      padding: 0 28px;
+      background: var(--ink);
+      color: var(--ivory);
+      border: 0;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 11px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .btn:hover { background: var(--oxblood); }
+    .text-btn {
+      background: none;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+    .field {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid var(--ink);
+      border-radius: 0;
+      height: 48px;
+      padding: 0;
+      outline: none;
+      font-size: 16px;
+    }
+    .field:focus { border-bottom-color: var(--oxblood); }
+    ::placeholder { color: #9a9186; }
+
+    .announcement {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      height: 34px;
+      padding: 0 var(--gutter);
+      background: var(--ink);
+      color: var(--ivory);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .announcement a { color: inherit; }
+    .ann-center { text-align: center; }
+    .ann-right { text-align: right; }
+    .short { display: none; }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: var(--ivory);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-bar {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      height: var(--header);
+      padding: 0 var(--gutter);
+    }
+    .nav-primary ul { display: flex; gap: 28px; }
+    .nav-primary > ul > li > a,
+    .tool-link,
+    .tool-btn {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      background: none;
+      border: 0;
+      padding: 8px 0;
+      cursor: pointer;
+    }
+    .nav-tools {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 26px;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+    }
+    .brand-name {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 26px;
+      letter-spacing: 0.42em;
+      text-indent: 0.42em;
+      line-height: 1;
+      font-optical-sizing: auto;
+    }
+    .brand-rule { width: 22px; height: 1px; background: var(--gold); }
+    .menu-toggle {
+      display: none;
+      width: 32px;
+      background: none;
+      border: 0;
+      padding: 8px 0;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 18px;
+      height: 1px;
+      background: currentColor;
+      margin: 6px 0;
+    }
+
+    .has-menu { position: static; }
+    .mega {
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      background: var(--ivory);
+      border-top: 1px solid var(--line);
+      padding: 36px var(--gutter) 44px;
+      grid-template-columns: repeat(4, 1fr) 240px;
+      gap: 32px;
+      box-shadow: 0 28px 40px rgba(18, 18, 18, 0.06);
+    }
+    .has-menu:hover > .mega,
+    .has-menu:focus-within > .mega { display: grid; }
+    .mega h3 {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+    .mega a {
+      display: block;
+      padding: 5px 0;
+      font-size: 14.5px;
+      font-weight: 300;
+      color: #3a342c;
+    }
+    .mega a:hover { color: var(--ink); }
+    .mega-feature img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+    .mega-feature span { display: block; margin-top: 10px; font-size: 13px; }
+
+    .search-panel { padding: 8px var(--gutter) 32px; }
+    .search-panel[hidden] { display: none; }
+    .search-panel .field {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 34px;
+      height: 64px;
+    }
+    .search-hits {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+    .search-hit {
+      display: block;
+      text-align: left;
+      background: none;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+    }
+    .search-hit img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: #e4ded4; }
+    .search-hit span { display: block; margin-top: 8px; font-size: 14px; }
+    .search-hit em { font-style: normal; color: var(--stone); font-size: 13px; }
+    .empty { color: var(--stone); margin-top: 18px; }
+
+    .hero {
+      position: relative;
+      min-height: calc(100svh - 112px);
+      display: grid;
+      align-items: end;
+      color: white;
+      background: #1a1a1a;
+    }
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 72% 100%;
+    }
+    .hero-shade {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(10,10,10,.72) 0%, rgba(10,10,10,.38) 28%, rgba(10,10,10,.08) 52%, transparent 68%),
+        linear-gradient(to top, rgba(10,10,10,.55), transparent 42%);
+    }
+    .hero-copy { position: relative; z-index: 1; padding: 48px var(--gutter) 56px; }
+    .hero .kicker { color: rgba(255,255,255,.78); margin-bottom: 14px; }
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-style: italic;
+      font-optical-sizing: auto;
+      font-size: clamp(64px, 9vw, 124px);
+      line-height: 0.84;
+      letter-spacing: -0.03em;
+      max-width: 8ch;
+    }
+    .hero .link { margin-top: 28px; color: white; }
+    .hero .link:hover { color: white; border-color: white; opacity: 0.7; }
+    .hero-caption {
+      position: absolute;
+      right: var(--gutter);
+      bottom: 28px;
+      z-index: 1;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.75);
+    }
+
+    .intro { padding: 100px var(--gutter) 28px; text-align: center; }
+    .intro-line {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      max-width: 14ch;
+      margin: 0 auto 18px;
+    }
+    .lede {
+      max-width: 440px;
+      margin: 0 auto;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      padding: 72px var(--gutter) 26px;
+    }
+    .section-head h2,
+    .block-title {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 0.92;
+      letter-spacing: -0.025em;
+      font-optical-sizing: auto;
+    }
+    .section-head .kicker { margin-bottom: 10px; }
+
+    .gates {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      padding: 0 var(--gutter) 24px;
+    }
+    .media { position: relative; overflow: hidden; background: #e4ded4; }
+    .media img, .gate img, .story img, .product img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.1s cubic-bezier(.2,.7,.2,1);
+    }
+    .ratio-34 { aspect-ratio: 3 / 4; }
+    .ratio-45 { aspect-ratio: 4 / 5; }
+    .gate:hover img, .product:hover img, .story:hover img { transform: scale(1.045); }
+    .gate-meta { padding: 16px 8px 8px; text-align: center; }
+    .gate h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+      margin-top: 4px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px 18px;
+      padding: 0 var(--gutter) 88px;
+    }
+    .product-hit {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: none;
+      cursor: pointer;
+      text-align: left;
+    }
+    .view-label {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      padding: 28px 12px 14px;
+      text-align: center;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: white;
+      background: linear-gradient(transparent, rgba(0,0,0,.4));
+      opacity: 0;
+      transition: opacity .35s ease;
+    }
+    .product:hover .view-label, .product-hit:focus-visible .view-label { opacity: 1; }
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      padding-top: 14px;
+    }
+    .product-meta h3 { font-size: 15px; font-weight: 400; }
+    .product-meta p, .price { color: var(--stone); font-size: 13px; font-weight: 300; }
+    .price { white-space: nowrap; }
+
+    .manifesto {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      min-height: 88vh;
+      background: var(--ink);
+      color: var(--ivory);
+    }
+    .manifesto-copy, .leather-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 72px 64px;
+    }
+    .manifesto .kicker, .leather .kicker { color: rgba(246,243,238,.62); margin-bottom: 18px; }
+    .manifesto h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-style: italic;
+      font-size: clamp(56px, 6.4vw, 104px);
+      line-height: 0.88;
+      letter-spacing: -0.03em;
+      max-width: 8ch;
+    }
+    .manifesto .lede, .leather .lede { color: rgba(246,243,238,.78); margin: 28px 0 0; max-width: 36ch; }
+    .manifesto .link { margin-top: 32px; }
+    .manifesto-media img, .leather-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 520px;
+    }
+    .manifesto-media img { object-position: center 15%; }
+
+    .estate {
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 64px;
+      align-items: center;
+      padding: 88px var(--gutter);
+      background: var(--ivory-deep);
+    }
+    .estate-gallery { display: block; }
+    .estate-gallery img { width: 100%; object-fit: cover; }
+    .estate-main { aspect-ratio: 4 / 5; object-position: center 30%; }
+    .estate-sub { aspect-ratio: 3 / 4; }
+    .estate .kicker { margin-bottom: 12px; }
+    .estate h2 {
+      font-family: var(--heritage);
+      font-weight: 500;
+      font-size: clamp(56px, 6vw, 88px);
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+    }
+    .estate blockquote {
+      font-family: var(--heritage);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 1.3;
+      margin: 22px 0;
+    }
+    .estate .lede { margin: 0 0 28px; }
+    .facts { display: grid; gap: 14px; margin: 8px 0 32px; }
+    .facts div { display: grid; grid-template-columns: 92px 1fr; gap: 12px; font-size: 14px; }
+    .facts dt { letter-spacing: 0.14em; text-transform: uppercase; font-size: 11px; color: var(--stone); padding-top: 4px; }
+
+    .leather {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      background: #0e0e0e;
+      color: var(--ivory);
+      min-height: 86vh;
+    }
+    .leather h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(56px, 6vw, 92px);
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+    }
+    .specs { margin: 32px 0; }
+    .specs li {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 14px 0;
+      border-top: 1px solid rgba(246,243,238,.2);
+      font-size: 14px;
+      font-weight: 300;
+    }
+    .specs li:last-child { border-bottom: 1px solid rgba(246,243,238,.2); }
+    .specs span { letter-spacing: 0.14em; text-transform: uppercase; font-size: 11px; color: rgba(246,243,238,.6); }
+
+    .journal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      padding: 0 var(--gutter) 96px;
+    }
+    .story img { aspect-ratio: 4 / 5; }
+    .story-meta { padding-top: 16px; }
+    .story h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 8px 0 12px;
+    }
+    .story-body { font-weight: 300; color: var(--ink-soft); padding-bottom: 8px; }
+    .story-body[hidden] { display: none; }
+
+    .letter {
+      padding: 110px var(--gutter) 120px;
+      text-align: center;
+      border-top: 1px solid var(--line);
+    }
+    .letter h2 {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(48px, 6vw, 84px);
+      line-height: 0.95;
+      margin: 12px 0 16px;
+    }
+    .letter .lede { margin-bottom: 8px; }
+    .letter form { max-width: 560px; margin: 36px auto 0; text-align: left; }
+    .letter-row { display: flex; gap: 18px; align-items: flex-end; }
+    .letter-row .btn { width: auto; flex: none; }
+    .fine, .form-note { color: var(--stone); font-size: 13px; font-weight: 300; margin-top: 14px; }
+    .form-note[hidden] { display: none; }
+
+    .footer {
+      background: var(--ink);
+      color: var(--ivory);
+      padding: 72px var(--gutter) 28px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(3, 1fr);
+      gap: 40px;
+    }
+    .footer .brand-name { font-size: 22px; }
+    .footer-intro {
+      max-width: 32ch;
+      margin-top: 18px;
+      font-weight: 300;
+      color: rgba(246,243,238,.72);
+      font-size: 14px;
+    }
+    .footer h3 {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+    .footer a, .footer li {
+      display: block;
+      padding: 5px 0;
+      color: rgba(246,243,238,.74);
+      font-weight: 300;
+      font-size: 14px;
+    }
+    .footer a:hover { color: white; }
+    .boutique { display: flex; justify-content: space-between; gap: 12px; }
+    .boutique span { color: white; font-weight: 400; }
+    .legal {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 64px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: rgba(246,243,238,.48);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      line-height: 1.5;
+    }
+
+    .scrim {
+      position: fixed;
+      inset: 0;
+      background: rgba(18,18,18,.46);
+      z-index: 60;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .4s ease;
+    }
+    .scrim.is-open { opacity: 1; pointer-events: auto; }
+
+    .drawer, .bag {
+      position: fixed;
+      background: var(--ivory);
+      z-index: 70;
+    }
+    .drawer {
+      inset: 0;
+      padding: 24px 24px 48px;
+      overflow: auto;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-12px);
+      transition: opacity .35s ease, transform .35s ease;
+    }
+    .drawer.is-open { opacity: 1; visibility: visible; pointer-events: auto; transform: none; }
+    .drawer-head, .bag-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+    .drawer nav { display: grid; gap: 6px; margin-top: 28px; }
+    .drawer nav a {
+      font-family: var(--serif);
+      font-size: clamp(36px, 8vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+    .mobile-hits { margin-top: 18px; }
+    .mobile-hits .search-hit {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      width: 100%;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .mobile-hits .search-hit img { width: 52px; height: 66px; aspect-ratio: auto; }
+
+    .bag {
+      top: 0; right: 0; bottom: 0;
+      width: min(420px, 100%);
+      display: flex;
+      flex-direction: column;
+      transform: translateX(104%);
+      transition: transform .45s cubic-bezier(.22,.7,.2,1);
+      padding: 22px 0 0;
+    }
+    .bag.is-open { transform: none; }
+    .bag-head, .bag-body, .bag-foot { padding-left: 24px; padding-right: 24px; }
+    .bag-head h2 {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 36px;
+    }
+    .bag-body { flex: 1; overflow: auto; }
+    .bag-row {
+      display: grid;
+      grid-template-columns: 72px 1fr auto;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .bag-row img { width: 72px; height: 90px; object-fit: cover; }
+    .bag-row strong { display: block; font-weight: 400; }
+    .bag-row span, .bag-row em { color: var(--stone); font-style: normal; font-size: 13px; font-weight: 300; }
+    .bag-foot { border-top: 1px solid var(--line); padding-top: 18px; padding-bottom: 24px; }
+    .subtotal {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    #quick-view {
+      border: 0;
+      padding: 0;
+      background: var(--ivory);
+      color: var(--ink);
+      width: min(980px, calc(100% - 32px));
+      max-height: min(860px, calc(100vh - 40px));
+    }
+    #quick-view::backdrop { background: rgba(18,18,18,.5); }
+    .qv { display: grid; grid-template-columns: 1.05fr 0.95fr; }
+    .qv-media { background: #e4ded4; min-height: 100%; }
+    .qv-media img { width: 100%; height: 100%; object-fit: cover; min-height: 520px; }
+    .qv-info { padding: 28px 32px 36px; position: relative; }
+    .qv-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .qv-info h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(36px, 4vw, 48px);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin: 16px 0 8px;
+    }
+    .qv-price { font-size: 15px; margin-bottom: 16px; }
+    .qv-copy { font-weight: 300; color: var(--ink-soft); margin-bottom: 22px; }
+    .sizes { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 18px; }
+    .size {
+      min-width: 44px;
+      height: 40px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      background: transparent;
+      cursor: pointer;
+    }
+    .size.is-selected { background: var(--ink); color: var(--ivory); border-color: var(--ink); }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-copy > * { animation: rise .9s ease both; }
+      .hero-copy > *:nth-child(2) { animation-delay: .1s; }
+      .hero-copy > *:nth-child(3) { animation-delay: .18s; }
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .search-hits { grid-template-columns: repeat(3, 1fr); }
+      .products { grid-template-columns: repeat(2, 1fr); }
+      .mega { grid-template-columns: repeat(2, 1fr); }
+      .mega-feature { display: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 1040px) {
+      .nav-primary, .house-link, #search-open { display: none; }
+      .menu-toggle { display: block; }
+      .mega { display: none !important; }
+    }
+    @media (max-width: 900px) {
+      .manifesto, .leather, .estate { grid-template-columns: 1fr; }
+      .manifesto-copy, .leather-copy { padding: 56px var(--gutter); }
+      .estate { gap: 28px; padding: 56px var(--gutter); }
+      .journal-grid, .gates { grid-template-columns: 1fr; }
+      .gates { max-width: 520px; }
+    }
+    @media (max-width: 720px) {
+      :root { --gutter: 20px; }
+      .ann-left, .ann-right, .long { display: none; }
+      .short { display: inline; }
+      .announcement { grid-template-columns: 1fr; justify-items: center; }
+      .brand-name { font-size: 20px; letter-spacing: 0.28em; text-indent: 0.28em; }
+      .hero { min-height: 82svh; }
+      .hero h1 { font-size: 64px; }
+      .hero-caption { display: none; }
+      .products { grid-template-columns: 1fr 1fr; gap: 22px 10px; padding-bottom: 56px; }
+      .product-meta { flex-direction: column; gap: 2px; }
+      .estate-main { aspect-ratio: 5 / 4; }
+      .letter-row, .legal, .footer-grid { display: grid; }
+      .letter-row .btn { width: 100%; }
+      .qv { grid-template-columns: 1fr; }
+      .qv-media img { min-height: 0; aspect-ratio: 4 / 5; }
+      .intro { padding-top: 64px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement" id="top">
+    <span class="ann-left">Paris · New York</span>
+    <span class="ann-center">
+      <span class="long">Autumn Winter 2026 — Now in boutiques</span>
+      <span class="short">Autumn Winter 2026</span>
+    </span>
+    <span class="ann-right">United States · <a href="zh.html">中文</a></span>
+  </div>
+
+  <header class="header">
+    <div class="header-bar">
+      <button class="menu-toggle" id="menu-open" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+      <nav class="nav-primary" aria-label="Primary">
+        <ul>
+          <li class="has-menu">
+            <a href="#women">Women</a>
+            <div class="mega">
+              <div>
+                <h3>Ready-to-Wear</h3>
+                <a href="#women">All clothing</a>
+                <a href="#arrivals">Coats</a>
+                <a href="#arrivals">Dresses</a>
+                <a href="#arrivals">Knitwear</a>
+                <a href="#estate">Evening</a>
+              </div>
+              <div>
+                <h3>Shoes</h3>
+                <a href="#arrivals">Pumps</a>
+                <a href="#arrivals">Boots</a>
+                <a href="#arrivals">Loafers</a>
+              </div>
+              <div>
+                <h3>Bags</h3>
+                <a href="#leather">Shoulder</a>
+                <a href="#product-normandy">The Normandy</a>
+                <a href="#leather">Small leather</a>
+              </div>
+              <div>
+                <h3>Jewelry</h3>
+                <a href="#correspondence">By appointment</a>
+                <a href="#correspondence">Rings</a>
+                <a href="#correspondence">Necklaces</a>
+              </div>
+              <a class="mega-feature" href="#product-rivoli">
+                <img src="assets/img/1539533018447-63fcce2678e3.jpg" alt="">
+                <span>The Rivoli Coat</span>
+              </a>
+            </div>
+          </li>
+          <li class="has-menu">
+            <a href="#men">Men</a>
+            <div class="mega">
+              <div>
+                <h3>Tailoring</h3>
+                <a href="#men">All tailoring</a>
+                <a href="#arrivals">Outerwear</a>
+                <a href="#product-montreal">The Montreal Coat</a>
+                <a href="#men">Shirts</a>
+              </div>
+              <div>
+                <h3>Shoes</h3>
+                <a href="#men">Oxfords</a>
+                <a href="#men">Boots</a>
+                <a href="#men">Loafers</a>
+              </div>
+              <div>
+                <h3>Accessories</h3>
+                <a href="#leather">Scarves</a>
+                <a href="#leather">Belts</a>
+                <a href="#leather">Small leather</a>
+              </div>
+              <div>
+                <h3>The Estate</h3>
+                <a href="#estate">Country chapter</a>
+                <a href="#estate">Riding cloth</a>
+              </div>
+              <a class="mega-feature" href="#men">
+                <img src="assets/img/1575862469264-0a2e53494cdf.jpg" alt="">
+                <span>Tailoring</span>
+              </a>
+            </div>
+          </li>
+          <li class="has-menu">
+            <a href="#leather">Leather Goods</a>
+            <div class="mega">
+              <div>
+                <h3>Icons</h3>
+                <a href="#leather">The Normandy</a>
+                <a href="#leather">The Folio</a>
+                <a href="#leather">The Evening</a>
+              </div>
+              <div>
+                <h3>Small Leather</h3>
+                <a href="#leather">Wallets</a>
+                <a href="#leather">Card cases</a>
+                <a href="#leather">Pouches</a>
+              </div>
+              <div>
+                <h3>Care</h3>
+                <a href="#correspondence">Patina</a>
+                <a href="#correspondence">Repairs</a>
+              </div>
+              <div>
+                <h3>The Atelier</h3>
+                <a href="#house">Normandy tannery</a>
+                <a href="#journal">Savoir-faire</a>
+              </div>
+              <a class="mega-feature" href="#leather">
+                <img src="assets/img/1624687943971-e86af76d57de.jpg" alt="">
+                <span>The Normandy</span>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <a class="brand" href="#top" aria-label="Varenne, home">
+        <span class="brand-name">Varenne</span>
+        <span class="brand-rule" aria-hidden="true"></span>
+      </a>
+
+      <div class="nav-tools">
+        <div class="has-menu house-link">
+          <a class="tool-link" href="#house">The House</a>
+          <div class="mega">
+            <div>
+              <h3>Heritage</h3>
+              <a href="#house">The house</a>
+              <a href="#journal">Ateliers</a>
+              <a href="#journal">Savoir-faire</a>
+            </div>
+            <div>
+              <h3>World</h3>
+              <a href="#boutiques">Boutiques</a>
+              <a href="#correspondence">Appointments</a>
+            </div>
+            <div>
+              <h3>Stories</h3>
+              <a href="#journal">Journal</a>
+              <a href="#estate">The Estate</a>
+              <a href="#campaign">Campaign</a>
+            </div>
+            <div>
+              <h3>Client Care</h3>
+              <a href="#correspondence">Contact</a>
+              <a href="#correspondence">Shipping &amp; returns</a>
+            </div>
+            <a class="mega-feature" href="#journal">
+              <img src="assets/img/1592833578500-1082e18665a3.jpg" alt="">
+              <span>Inside the atelier</span>
+            </a>
+          </div>
+        </div>
+        <button class="tool-btn" id="search-open" type="button" aria-expanded="false" aria-controls="search-panel">Search</button>
+        <button class="tool-btn" id="bag-open" type="button" aria-controls="bag">Bag (<span id="bag-count">0</span>)</button>
+      </div>
+    </div>
+
+    <div class="search-panel" id="search-panel" hidden>
+      <label class="sr-only" for="search-input">Search Varenne</label>
+      <input class="field" id="search-input" type="search" placeholder="Search the house" autocomplete="off">
+      <div class="search-hits" id="search-hits"></div>
+    </div>
+  </header>
+
+  <div class="drawer" id="mobile-nav" aria-hidden="true">
+    <div class="drawer-head">
+      <span class="kicker">Menu</span>
+      <button class="text-btn" id="menu-close" type="button">Close</button>
+    </div>
+    <label class="sr-only" for="mobile-search">Search</label>
+    <input class="field" id="mobile-search" type="search" placeholder="Search" autocomplete="off">
+    <div class="mobile-hits" id="mobile-hits"></div>
+    <nav aria-label="Mobile">
+      <a href="#women">Women</a>
+      <a href="#men">Men</a>
+      <a href="#leather">Leather Goods</a>
+      <a href="#house">The House</a>
+      <a href="#estate">The Estate</a>
+      <a href="#journal">Journal</a>
+      <a href="#boutiques">Boutiques</a>
+      <a href="#correspondence">Correspondence</a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="hero" id="campaign">
+      <img class="hero-img" src="assets/img/1483560562521-e1e1fcb9e48f.jpg" alt="A woman in a black coat standing in an open field under a gray sky" fetchpriority="high">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="kicker">Campaign 01 · Autumn Winter 2026</p>
+        <h1>The Quiet<br>Season</h1>
+        <a class="link" href="#arrivals">Explore the collection</a>
+      </div>
+      <p class="hero-caption">Black wool, in the open</p>
+    </section>
+
+    <section class="intro">
+      <p class="intro-line">Autumn is a study in restraint.</p>
+      <p class="lede">Varenne designs clothing, leather goods, and objects for a life composed rather than displayed. Cut in Paris. Finished in New York. Worn for decades.</p>
+    </section>
+
+    <section id="collections">
+      <div class="section-head">
+        <div>
+          <p class="kicker">01 — The Collections</p>
+          <h2>Autumn Winter</h2>
+        </div>
+        <a class="link" href="#arrivals">Just arrived</a>
+      </div>
+      <div class="gates">
+        <a class="gate" id="women" href="#arrivals">
+          <div class="media ratio-34">
+            <img src="assets/img/1668952135120-7d997b1b3778.jpg" alt="Model in an oversized camel trench" style="object-position: center 20%">
+          </div>
+          <div class="gate-meta">
+            <p class="kicker">Women</p>
+            <h3>Ready-to-Wear</h3>
+          </div>
+        </a>
+        <a class="gate" id="men" href="#product-montreal">
+          <div class="media ratio-34">
+            <img src="assets/img/1594938298603-c8148c4dae35.jpg" alt="Blue windowpane three-piece suit" style="object-position: center 30%">
+          </div>
+          <div class="gate-meta">
+            <p class="kicker">Men</p>
+            <h3>Tailoring</h3>
+          </div>
+        </a>
+        <a class="gate" href="#leather">
+          <div class="media ratio-34">
+            <img src="assets/img/1624687943971-e86af76d57de.jpg" alt="Cognac vegetable-tanned leather tote">
+          </div>
+          <div class="gate-meta">
+            <p class="kicker">Leather</p>
+            <h3>Icons</h3>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head" id="arrivals">
+        <div>
+          <p class="kicker">New</p>
+          <h2>Arrivals</h2>
+        </div>
+      </div>
+      <div class="products">
+        <article class="product" id="product-rivoli" data-id="rivoli" data-name="The Rivoli Coat" data-material="Double-faced wool" data-price="4200" data-color="Camel" data-kind="apparel" data-copy="A double-faced wool coat, belted, with a collar that stands on its own. Cut long, with a weight that holds the line of the shoulder.">
+          <button class="product-hit" type="button">
+            <span class="media ratio-45">
+              <img src="assets/img/1539533018447-63fcce2678e3.jpg" alt="Camel double-faced wool coat, belted, on stone steps" style="object-position: center top">
+              <span class="view-label">View</span>
+            </span>
+          </button>
+          <div class="product-meta">
+            <div>
+              <h3>The Rivoli Coat</h3>
+              <p>Double-faced wool · Camel</p>
+            </div>
+            <span class="price">$4,200</span>
+          </div>
+        </article>
+
+        <article class="product" id="product-montreal" data-id="montreal" data-name="The Montreal Coat" data-material="Cotton gabardine" data-price="2450" data-color="Camel" data-kind="apparel" data-copy="A clean gabardine coat with a throat latch and a lining that flashes when the front is left open. Cut to move, and to last the decade.">
+          <button class="product-hit" type="button">
+            <span class="media ratio-45">
+              <img src="assets/img/1575862469264-0a2e53494cdf.jpg" alt="Camel gabardine coat on a white ground" style="object-position: center 18%">
+              <span class="view-label">View</span>
+            </span>
+          </button>
+          <div class="product-meta">
+            <div>
+              <h3>The Montreal Coat</h3>
+              <p>Cotton gabardine · Camel</p>
+            </div>
+            <span class="price">$2,450</span>
+          </div>
+        </article>
+
+        <article class="product" id="product-normandy" data-id="normandy" data-name="The Normandy" data-material="Vegetable-tanned calf" data-price="2650" data-color="Cognac" data-kind="accessory" data-copy="One hide, one silhouette. The Normandy is saddle-stitched and carried by rolled handles that darken in the hand.">
+          <button class="product-hit" type="button">
+            <span class="media ratio-45">
+              <img src="assets/img/1624687943971-e86af76d57de.jpg" alt="Cognac vegetable-tanned leather tote">
+              <span class="view-label">View</span>
+            </span>
+          </button>
+          <div class="product-meta">
+            <div>
+              <h3>The Normandy</h3>
+              <p>Vegetable-tanned calf · Cognac</p>
+            </div>
+            <span class="price">$2,650</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="manifesto" id="house">
+      <div class="manifesto-media">
+        <img src="assets/img/1592833578500-1082e18665a3.jpg" alt="Black and white portrait of a model in a belted black coat" style="object-position: center 30%">
+      </div>
+      <div class="manifesto-copy">
+        <p class="kicker">02 — The House</p>
+        <h2>Severity, softened.</h2>
+        <p class="lede">The autumn wardrobe is built on black, ivory, and oxblood. Precise volumes, quiet hardware, and cloth that holds its shape.</p>
+        <a class="link" href="#journal">Read the journal</a>
+      </div>
+    </section>
+
+    <section class="estate" id="estate">
+      <div class="estate-gallery">
+        <img class="estate-main" src="assets/img/1553284965-83fd3e82fa5a.jpg" alt="A white horse in motion across a dark field">
+      </div>
+      <div class="estate-copy">
+        <p class="kicker">03 — Country Chapter</p>
+        <h2>The Estate</h2>
+        <blockquote>Cut for the hour after a ride.</blockquote>
+        <p class="lede">Drawn from the Hudson Valley and the light of the Île-de-France. Knitwear is worn for a year on the property before it is offered.</p>
+        <dl class="facts">
+          <div><dt>Cloth</dt><dd>Cashmere from Scotland</dd></div>
+          <div><dt>Mill</dt><dd>A family workshop, since 1891</dd></div>
+          <div><dt>Cut</dt><dd>Finished in New York</dd></div>
+        </dl>
+        <a class="link" href="#product-montreal">View the coat</a>
+      </div>
+    </section>
+
+    <section class="leather" id="leather">
+      <div class="leather-copy">
+        <p class="kicker">04 — Leather Goods</p>
+        <h2>The Normandy</h2>
+        <p class="lede">A single tote, carried for decades. Cut from vegetable-tanned calf in our Normandy tannery.</p>
+        <ul class="specs">
+          <li><span>Hide</span> Vegetable-tanned calf</li>
+          <li><span>Stitch</span> Hand saddle-stitched</li>
+          <li><span>Handles</span> Rolled calf, riveted</li>
+          <li><span>Made</span> Normandy, France</li>
+        </ul>
+        <a class="link" href="#product-normandy">View the bag · $2,650</a>
+      </div>
+      <div class="leather-media">
+        <img src="assets/img/1624687943971-e86af76d57de.jpg" alt="Cognac leather tote with rolled handles">
+      </div>
+    </section>
+
+    <section id="journal">
+      <div class="section-head">
+        <div>
+          <p class="kicker">05 — Journal</p>
+          <h2>From the house</h2>
+        </div>
+      </div>
+      <div class="journal-grid">
+        <article class="story">
+          <div class="media">
+            <img src="assets/img/1558769132-cb1aea458c5e.jpg" alt="Ivory and camel knits hanging in a row">
+          </div>
+          <div class="story-meta">
+            <p class="kicker">12 September 2026 · Atelier</p>
+            <h3>The glove factory on Rue du Faubourg</h3>
+            <p class="story-body" hidden>On the third floor of a former glove factory in the 9th arrondissement, coats are still cut on the square. The Rivoli pattern has sixteen pieces. Most of them you will never see.</p>
+            <button class="text-btn story-toggle" type="button" aria-expanded="false">Read</button>
+          </div>
+        </article>
+        <article class="story">
+          <div class="media">
+            <img src="assets/img/1524504388940-b1c1722653e1.jpg" alt="Portrait in black, against a gray ground" style="object-position: center 20%">
+          </div>
+          <div class="story-meta">
+            <p class="kicker">3 September 2026 · Palette</p>
+            <h3>Three notes for autumn</h3>
+            <p class="story-body" hidden>This season the house worked from three notes: ivory wool, oxblood calf, and a black that reads slightly brown in daylight. Nothing fluorescent. Nothing shy.</p>
+            <button class="text-btn story-toggle" type="button" aria-expanded="false">Read</button>
+          </div>
+        </article>
+        <article class="story">
+          <div class="media">
+            <img src="assets/img/1500382017468-9049fed747ef.jpg" alt="A gold field at the end of the day">
+          </div>
+          <div class="story-meta">
+            <p class="kicker">18 August 2026 · The Estate</p>
+            <h3>A year in the Hudson Valley</h3>
+            <p class="story-body" hidden>The Hudson property is not a backdrop. It is where the knitwear is worn for a year before it is offered — a test against weather, saddles, and Sunday lunch.</p>
+            <button class="text-btn story-toggle" type="button" aria-expanded="false">Read</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="letter" id="correspondence">
+      <p class="kicker">Correspondence</p>
+      <h2>A letter from the house</h2>
+      <p class="lede">Invitations, private appointments, repairs, and the occasional note from the atelier. For jewelry, visits are by appointment only.</p>
+      <form id="letter-form">
+        <div class="letter-row">
+          <div style="flex:1">
+            <label class="sr-only" for="email">Email address</label>
+            <input class="field" id="email" name="email" type="email" required placeholder="Email address" autocomplete="email">
+          </div>
+          <button class="btn" type="submit">Join</button>
+        </div>
+        <p class="form-note" id="letter-note" hidden>You are on the list. A letter will follow.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#top" aria-label="Varenne, home">
+          <span class="brand-name">Varenne</span>
+          <span class="brand-rule" aria-hidden="true"></span>
+        </a>
+        <p class="footer-intro">An independent house of clothing and leather goods. Founded in Paris in 1924. Established in New York in 1951.</p>
+      </div>
+      <div>
+        <h3>Client Care</h3>
+        <a href="#correspondence">Contact</a>
+        <a href="#correspondence">Shipping</a>
+        <a href="#correspondence">Returns</a>
+        <a href="#correspondence">Repairs</a>
+        <a href="#correspondence">Private appointments</a>
+      </div>
+      <div>
+        <h3>The House</h3>
+        <a href="#house">Heritage</a>
+        <a href="#journal">Journal</a>
+        <a href="#estate">The Estate</a>
+        <a href="#leather">Leather</a>
+        <a href="#campaign">Campaign</a>
+      </div>
+      <div id="boutiques">
+        <h3>Boutiques</h3>
+        <ul>
+          <li class="boutique"><span>Paris</span> Le Marais</li>
+          <li class="boutique"><span>New York</span> SoHo</li>
+          <li class="boutique"><span>Milan</span> Brera</li>
+          <li class="boutique"><span>London</span> Mayfair</li>
+          <li class="boutique"><span>Tokyo</span> Aoyama</li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Varenne. All rights reserved.</span>
+      <span>Varenne is a fictional house and a design study. It is not affiliated with Louis Vuitton, Prada, Ralph Lauren, or any other maison.</span>
+    </div>
+  </footer>
+
+  <div class="scrim" id="scrim" hidden></div>
+
+  <aside class="bag" id="bag" aria-hidden="true" aria-labelledby="bag-title">
+    <div class="bag-head">
+      <h2 id="bag-title">Your selection</h2>
+      <button class="text-btn" id="bag-close" type="button">Close</button>
+    </div>
+    <div class="bag-body" id="bag-body"></div>
+    <div class="bag-foot" id="bag-foot" hidden>
+      <div class="subtotal"><span>Subtotal</span><strong id="bag-subtotal">$0</strong></div>
+      <button class="btn" id="checkout" type="button">Proceed</button>
+      <p class="form-note" id="checkout-note" hidden>This preview ends before payment.</p>
+    </div>
+  </aside>
+
+  <dialog id="quick-view" aria-labelledby="qv-name">
+    <div class="qv">
+      <div class="qv-media"><img id="qv-img" alt=""></div>
+      <div class="qv-info">
+        <div class="qv-top">
+          <p class="kicker" id="qv-material"></p>
+          <button class="text-btn" id="qv-close" type="button">Close</button>
+        </div>
+        <h2 id="qv-name"></h2>
+        <p class="qv-price" id="qv-price"></p>
+        <p class="qv-copy" id="qv-copy"></p>
+        <p class="kicker">Size</p>
+        <div class="sizes" id="qv-sizes"></div>
+        <p class="form-note" id="qv-note" hidden>Select a size.</p>
+        <button class="btn" id="qv-add" type="button">Add to bag</button>
+        <p class="fine">Complimentary shipping above $500. Complimentary returns within 14 days.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    const money = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+    const SIZES = {
+      apparel: ["XS", "S", "M", "L", "XL"],
+      shoes: ["35", "36", "37", "38", "39", "40", "41"],
+      accessory: ["One size"]
+    };
+
+    const menu = document.getElementById("mobile-nav");
+    const bagEl = document.getElementById("bag");
+    const scrim = document.getElementById("scrim");
+    const searchPanel = document.getElementById("search-panel");
+    const searchInput = document.getElementById("search-input");
+    const searchHits = document.getElementById("search-hits");
+    const mobileHits = document.getElementById("mobile-hits");
+    const dialog = document.getElementById("quick-view");
+    const bagBody = document.getElementById("bag-body");
+    const bagFoot = document.getElementById("bag-foot");
+    const bagCount = document.getElementById("bag-count");
+    const bagSubtotal = document.getElementById("bag-subtotal");
+
+    let bag = [];
+    let activeProduct = null;
+    let selectedSize = null;
+
+    const allProducts = () => [...document.querySelectorAll(".product")];
+
+    function lock(on) {
+      document.body.classList.toggle("locked", on);
+    }
+
+    function openMenu() {
+      menu.classList.add("is-open");
+      menu.setAttribute("aria-hidden", "false");
+      document.getElementById("menu-open").setAttribute("aria-expanded", "true");
+      lock(true);
+    }
+    function closeMenu() {
+      menu.classList.remove("is-open");
+      menu.setAttribute("aria-hidden", "true");
+      document.getElementById("menu-open").setAttribute("aria-expanded", "false");
+      if (!bagEl.classList.contains("is-open")) lock(false);
+    }
+
+    function openBag() {
+      bagEl.classList.add("is-open");
+      bagEl.setAttribute("aria-hidden", "false");
+      scrim.hidden = false;
+      requestAnimationFrame(() => scrim.classList.add("is-open"));
+      lock(true);
+    }
+    function closeBag() {
+      bagEl.classList.remove("is-open");
+      bagEl.setAttribute("aria-hidden", "true");
+      scrim.classList.remove("is-open");
+      setTimeout(() => { if (!scrim.classList.contains("is-open")) scrim.hidden = true; }, 400);
+      if (!menu.classList.contains("is-open")) lock(false);
+    }
+
+    function productFrom(el) {
+      const img = el.querySelector("img");
+      return {
+        id: el.dataset.id,
+        name: el.dataset.name,
+        material: el.dataset.material,
+        price: Number(el.dataset.price),
+        color: el.dataset.color,
+        kind: el.dataset.kind,
+        copy: el.dataset.copy,
+        img: img.getAttribute("src"),
+        alt: img.alt
+      };
+    }
+
+    function fillHits(container, query, compact) {
+      container.replaceChildren();
+      const q = query.trim().toLowerCase();
+      const matches = allProducts().filter((el) => {
+        const blob = `${el.dataset.name} ${el.dataset.material} ${el.dataset.color}`.toLowerCase();
+        return !q || blob.includes(q);
+      });
+      if (!matches.length) {
+        const p = document.createElement("p");
+        p.className = "empty";
+        p.textContent = "Nothing matches.";
+        container.append(p);
+        return;
+      }
+      matches.forEach((el) => {
+        const data = productFrom(el);
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "search-hit";
+        const img = document.createElement("img");
+        img.src = data.img;
+        img.alt = "";
+        const name = document.createElement("span");
+        name.textContent = data.name;
+        const price = document.createElement("em");
+        price.textContent = money.format(data.price);
+        if (compact) {
+          const text = document.createElement("span");
+          const title = document.createElement("span");
+          title.textContent = data.name;
+          text.append(title, price);
+          button.append(img, text);
+        } else {
+          button.append(img, name, price);
+        }
+        button.addEventListener("click", () => {
+          closeMenu();
+          searchPanel.hidden = true;
+          document.getElementById("search-open").setAttribute("aria-expanded", "false");
+          openQuick(el);
+        });
+        container.append(button);
+      });
+    }
+
+    function openQuick(el) {
+      activeProduct = productFrom(el);
+      selectedSize = activeProduct.kind === "accessory" ? SIZES.accessory[0] : null;
+      document.getElementById("qv-img").src = activeProduct.img;
+      document.getElementById("qv-img").alt = activeProduct.alt;
+      document.getElementById("qv-material").textContent = activeProduct.material;
+      document.getElementById("qv-name").textContent = activeProduct.name;
+      document.getElementById("qv-price").textContent = money.format(activeProduct.price);
+      document.getElementById("qv-copy").textContent = activeProduct.copy;
+      document.getElementById("qv-note").hidden = true;
+      const sizes = document.getElementById("qv-sizes");
+      sizes.replaceChildren();
+      SIZES[activeProduct.kind].forEach((size) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "size" + (size === selectedSize ? " is-selected" : "");
+        b.textContent = size;
+        b.addEventListener("click", () => {
+          selectedSize = size;
+          sizes.querySelectorAll(".size").forEach((n) => n.classList.toggle("is-selected", n === b));
+          document.getElementById("qv-note").hidden = true;
+        });
+        sizes.append(b);
+      });
+      if (!dialog.open) dialog.showModal();
+    }
+
+    function renderBag() {
+      const count = bag.reduce((sum, item) => sum + item.qty, 0);
+      bagCount.textContent = String(count);
+      bagBody.replaceChildren();
+      if (!bag.length) {
+        const p = document.createElement("p");
+        p.className = "lede";
+        p.textContent = "Your selection is empty.";
+        bagBody.append(p);
+        bagFoot.hidden = true;
+        return;
+      }
+      bagFoot.hidden = false;
+      bag.forEach((item) => {
+        const row = document.createElement("div");
+        row.className = "bag-row";
+        const img = document.createElement("img");
+        img.src = item.img;
+        img.alt = "";
+        const text = document.createElement("div");
+        const strong = document.createElement("strong");
+        strong.textContent = item.name;
+        const meta = document.createElement("span");
+        meta.textContent = `Size ${item.size} · Qty ${item.qty}`;
+        const remove = document.createElement("button");
+        remove.type = "button";
+        remove.className = "text-btn";
+        remove.textContent = "Remove";
+        remove.addEventListener("click", () => {
+          bag = bag.filter((entry) => !(entry.id === item.id && entry.size === item.size));
+          renderBag();
+        });
+        text.append(strong, meta, remove);
+        const price = document.createElement("em");
+        price.textContent = money.format(item.price * item.qty);
+        row.append(img, text, price);
+        bagBody.append(row);
+      });
+      const subtotal = bag.reduce((sum, item) => sum + item.price * item.qty, 0);
+      bagSubtotal.textContent = money.format(subtotal);
+    }
+
+    document.getElementById("menu-open").addEventListener("click", openMenu);
+    document.getElementById("menu-close").addEventListener("click", closeMenu);
+    menu.querySelectorAll("nav a").forEach((a) => a.addEventListener("click", closeMenu));
+
+    document.getElementById("bag-open").addEventListener("click", openBag);
+    document.getElementById("bag-close").addEventListener("click", closeBag);
+    scrim.addEventListener("click", closeBag);
+
+    document.getElementById("search-open").addEventListener("click", () => {
+      const open = searchPanel.hidden;
+      searchPanel.hidden = !open;
+      document.getElementById("search-open").setAttribute("aria-expanded", String(open));
+      if (open) {
+        fillHits(searchHits, searchInput.value, false);
+        searchInput.focus();
+      }
+    });
+    searchInput.addEventListener("input", () => fillHits(searchHits, searchInput.value, false));
+    document.getElementById("mobile-search").addEventListener("input", (event) => {
+      fillHits(mobileHits, event.target.value, true);
+    });
+
+    allProducts().forEach((el) => {
+      el.querySelector(".product-hit").addEventListener("click", () => openQuick(el));
+    });
+
+    document.getElementById("qv-close").addEventListener("click", () => dialog.close());
+    document.getElementById("qv-add").addEventListener("click", () => {
+      if (!selectedSize) {
+        document.getElementById("qv-note").hidden = false;
+        return;
+      }
+      const existing = bag.find((item) => item.id === activeProduct.id && item.size === selectedSize);
+      if (existing) existing.qty += 1;
+      else bag.push({ ...activeProduct, size: selectedSize, qty: 1 });
+      renderBag();
+      dialog.close();
+      openBag();
+    });
+
+    document.querySelectorAll(".story-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const body = button.parentElement.querySelector(".story-body");
+        const open = body.hidden;
+        body.hidden = !open;
+        button.setAttribute("aria-expanded", String(open));
+        button.textContent = open ? "Close" : "Read";
+      });
+    });
+
+    document.getElementById("letter-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      document.getElementById("letter-note").hidden = false;
+      event.currentTarget.reset();
+    });
+
+    document.getElementById("checkout").addEventListener("click", () => {
+      document.getElementById("checkout-note").hidden = false;
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+      closeBag();
+      closeMenu();
+      searchPanel.hidden = true;
+      document.getElementById("search-open").setAttribute("aria-expanded", "false");
+    });
+
+    renderBag();
+  </script>
+</body>
+</html>
